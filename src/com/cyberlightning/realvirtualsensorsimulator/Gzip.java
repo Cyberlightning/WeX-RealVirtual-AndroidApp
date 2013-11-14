@@ -12,23 +12,6 @@ import android.util.Log;
 
 public class Gzip {
 
-	
-
-	private void tets() {
-		final String text = "hello";
-		try {
-	    	byte[] compressed = compress(text);
-	    	for (byte character : compressed) {
-	        	Log.d("test", String.valueOf(character));
-	    	}
-	    	String decompressed = decompress(compressed);
-	    	Log.d("test", decompressed);
-			} catch (IOException e) {
-			e.printStackTrace();
-			}
-	}
-
-
 	public static byte[] compress(String string) throws IOException {
 	    ByteArrayOutputStream os = new ByteArrayOutputStream(string.length());
 	    GZIPOutputStream gos = new GZIPOutputStream(os);
