@@ -144,7 +144,7 @@ public abstract class JsonParser {
 			
 			deviceWrapper.put("actuators", actuators);
 			deviceWrapper.put("sensors", sensors);
-			device.put("attributes", attributes);
+			deviceWrapper.put("attributes", attributes);
 			device.put(MainActivity.deviceId, deviceWrapper);
 			wrapper.put(MainActivity.deviceId, device);
 			
