@@ -133,7 +133,7 @@ public class SettingsViewFragment extends Fragment implements OnClickListener {
 	    if (!getActivity().getPackageManager().hasSystemFeature(PackageManager.FEATURE_LOCATION_GPS)){
 	    	this.gpsCheckBox.setEnabled(false);
 	    } else {
-	    	this.gpsCheckBox.setChecked(settings.getBoolean(SHARED_GPS, false));
+	    	this.gpsCheckBox.setChecked(settings.getBoolean(SHARED_GPS, true));
 	    }
 	}
 
@@ -213,9 +213,10 @@ public class SettingsViewFragment extends Fragment implements OnClickListener {
 	
 	private void toggleGPS(Boolean _turnOn) {
 		
-		Intent intent=new Intent("android.location.GPS_ENABLED_CHANGE");
-		intent.putExtra("enabled", _turnOn);
-		getActivity().sendBroadcast(intent);
+		//Intent intent=new Intent("android.location.GPS_ENABLED_CHANGE");
+		//intent.putExtra("enabled", _turnOn); // not working on all API versions
+		//getActivity().sendBroadcast(intent);
+		startActivity(new Intent(android.provider.Settings.ACTION_LOCATION_SOURCE_SETTINGS));
 	}
 
 	@Override

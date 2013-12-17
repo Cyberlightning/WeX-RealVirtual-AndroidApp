@@ -204,6 +204,22 @@ public abstract class JsonParser {
 				break;
 			case Sensor.TYPE_RELATIVE_HUMIDITY:primitive = "double";
 				break;
+			case 14:
+				// LGE nexus 4
+				primitive = "double";
+				break;
+			case 15:
+				// LGE nexus 4
+				primitive = "array";
+				break;
+			case 16:
+				// LGE nexus 4
+				primitive = "3DPoint";
+				break;
+			case 17:
+				// LGE nexus 4
+				primitive = "double";
+				break;
 			
 			
 			}
@@ -242,7 +258,23 @@ public abstract class JsonParser {
 			case Sensor.TYPE_ORIENTATION:unit = "orientation";
 				break;
 			case Sensor.TYPE_RELATIVE_HUMIDITY:unit = "percent";
-			break;
+				break;
+			case 14:
+				// LGE nexus 4
+				unit = "uT";
+				break;
+			case 15:
+				// LGE nexus 4
+				unit = "array";
+				break;
+			case 16:
+				// LGE nexus 4
+				unit = "rad/s";
+				break;
+			case 17:
+				// LGE nexus 4
+				unit = "numeric";
+				break;
 		
 			}
 			
@@ -276,6 +308,19 @@ public abstract class JsonParser {
 			case Sensor.TYPE_ORIENTATION:name = "orientation";
 				break;
 			case Sensor.TYPE_RELATIVE_HUMIDITY: name = "relativehumidity";
+				break;
+			case 14:
+				name = "lgemagnetometersensor";
+				break;
+			case 15:
+				name = "gamerotationvector";
+				break;
+			case 16:
+				name = "lgegyroscopesensor";
+				break;
+			case 17:
+				name = "significantmotion";
+				break;
 			}
 			return name;
 		}
