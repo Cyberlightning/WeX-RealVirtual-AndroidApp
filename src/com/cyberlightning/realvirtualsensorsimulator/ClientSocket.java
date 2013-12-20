@@ -59,13 +59,12 @@ public class ClientSocket extends Observable implements Runnable, IClientSocket 
 			this.serverSocket = new DatagramSocket(this.port);
 			//this.serverSocket.setReceiveBufferSize(DEFAULT_BUFFER_SIZE);
 			
-			byte[] receiveByte = new byte[DEFAULT_BUFFER_SIZE]; 
-			DatagramPacket receivedPacket = new DatagramPacket(receiveByte, receiveByte.length);
-			
 			this.senderWorker = new SocketSender();
 			
 			
 			while(true) {
+				byte[] receiveByte = new byte[DEFAULT_BUFFER_SIZE]; 
+				DatagramPacket receivedPacket = new DatagramPacket(receiveByte, receiveByte.length);
 				serverSocket.receive(receivedPacket);
 				handleInboundMessage(receivedPacket);
 			}
