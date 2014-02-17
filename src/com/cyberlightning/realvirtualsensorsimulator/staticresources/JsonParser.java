@@ -147,6 +147,7 @@ public abstract class JsonParser {
 			deviceWrapper.put("attributes", attributes);
 			device.put(MainActivity.deviceId, deviceWrapper);
 			wrapper.put(MainActivity.deviceId, device);
+			wrapper.put("dataformat_version", "1.0");
 			
 			
 		} catch (JSONException e) {
